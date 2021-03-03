@@ -56,13 +56,13 @@ NOW WE'RE READY TO CODE (BUT JUST OUR MODELS — NO CONTROLLERS OR SERIALIZERS Y
 - [X] 1. Create separate directory for frontend
 - [X] 2. Create index.html file with script tag connecting your index.js. Ex: <script type="text/javascript" src="index.js"></script>
 - [X] 3. Create index.js, console.log("in index.js"), and check for the logged message in your dev tools to confirm the index.html <> index.js connection was established.
-- [ ] 4. Initialize a git repo for frontend repository.
+- [X] 4. Initialize a git repo for frontend repository.
 ---
 **Connect your API to your frontend!**
 
-- [ ] 5. Think about the JS mantra and answer this question: When the DOM Content is Loaded, I want to make a GET fetch and then manipulate the DOM in what way (usually render the data)?
-- [ ] 6. Create DOMContentLoaded event listener and console.log("loaded") as the event handler to confirm we've properly set up the listener.
-- [ ] 7. We're eventually going to make a call to the index route of our API (ex: localhost:3000/api/v1/syllabuses). Run your rails server and visit that end point in the browser to confirm the expected JSON data is present.
+- [X] 5. Think about the JS mantra and answer this question: When the DOM Content is Loaded, I want to make a GET fetch and then manipulate the DOM in what way (usually render the data)?
+- [X] 6. Create DOMContentLoaded event listener and console.log("loaded") as the event handler to confirm we've properly set up the listener.
+- [X] 7. We're eventually going to make a call to the index route of our API (ex: localhost:3000/tacos). Run your rails server and visit that end point in the browser to confirm the expected JSON data is present.
 - [ ] 8. We can see the JSON data in the browser but in order to access it in our frontend, we'll need to setup Cross Origin Resource Sharing (CORS)
   * In order to do this we'll need to do a couple things:
   * Navigate to your Gemfile and uncomment gem 'rack-cors' then bundle install. You can read more about CORS in the PART 3 notes and here.
