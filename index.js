@@ -24,6 +24,18 @@ function descriptionInput(){
   return document.getElementById('description')
 }
 
+function restaurantNameInput(){
+  return document.getElementById('restaurant-name')
+}
+
+function restaurantUrlInput(){
+  return document.getElementById('restaurant-url')
+}
+
+function locationInput(){
+  return document.getElementById('location')
+}
+
 function form(){
   return document.getElementById('form')
 }
@@ -40,10 +52,11 @@ function getTacos(){
       const tacoMarkup = `
       <div data-id=${taco.id}>
       <h3>${taco.attributes.name}</h3>
-      <p>${taco.attributes.description}</p>
+      <p><em>Description:</em> ${taco.attributes.description}</p>
+      <p><em>Location:</em></p>
       <p>${taco.attributes.restaurant.name} - <a href="${taco.attributes.restaurant.url}">${taco.attributes.restaurant.url}</a></p>
       <p>${taco.attributes.restaurant.location}</p>
-      <p>${taco.attributes.rating}</p>
+      <p>Likes: ${taco.attributes.likes}</p>
       <button data-id=${taco.id}>edit</button>
       </div>
       <br></br>`;
@@ -65,6 +78,21 @@ function formTemplate(){
     <div class = 'input-field'>
       <label for='description'>Taco Description</label>
       <textarea name='description' id='description' cols='30' rows='5'></textarea>
+    </div>
+    <br>
+    <div class = 'input-field'>
+      <label for='restaurant-name'>Restaurant Name</label>
+      <input type='text' name='restaurant-name' id='restaurant-name'/>
+    </div>
+    <br>
+    <div class = 'input-field'>
+      <label for='restaurant-url'>Restaurant Website</label>
+      <input type='text' name='restaurant-url' id='restaurant-url'/>
+    </div>
+    <br>
+    <div class = 'input-field'>
+      <label for='location'>City & State</label>
+      <input type='text' name='location' id='location'/>
     </div>
     <br>
     <input type='submit' value='Add Taco' />
@@ -92,7 +120,10 @@ function submitForm(e){
   let strongParams = {
     taco: {
       name: nameInput().value,
-      description: descriptionInput().value
+      description: descriptionInput().value,
+      restaurantName: restaurantNameInput().value,
+      restaurantUrl: restaurantUrlInput().value,
+      location: locationInput().value
     }
   }
 
@@ -109,8 +140,7 @@ function submitForm(e){
   .then(resp => resp.json())
   .then(tacos => {
     tacos.push(taco);
-    getTacos();
-
+    
 })}
 
 
